@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 
 public class CreatingConnection {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args)  {
        
         try {
             
