@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class UpdateTheSalary {
+public class UpdateDate {
     public static void main(String[] args) {
 
-        try {
+        try{
 
-            //  load the Driver..............
+            // load the Driver...............
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -18,16 +18,14 @@ public class UpdateTheSalary {
             String url = "jdbc:mysql://localhost:3306/salary";
             String name = "root";
             String password = "Amitpanika97@#";
-
             Connection connection = DriverManager.getConnection(url, name, password);
             Statement statement = connection.createStatement();
-            statement.executeUpdate("alter table employee add Salary double not null");
-
-            // Updating salary................
-
-            statement.executeUpdate("update employee set salary = 300000.00 where name = 'bill'");
-            System.out.println("table created in database.......");
-        } catch (Exception e) {
+            statement.executeUpdate("update employee set start = ('2018-01-03') where name ='bill'");
+            statement.executeUpdate("update employee set start = ('2019-11-13') where name ='Mark'");
+            statement.executeUpdate("update employee set start = ('2020-05-21') where name ='Charlie'");
+            System.out.println(" table created in databases");
+            connection.close();
+        }catch(Exception e){
             e.printStackTrace();
         }
     }
